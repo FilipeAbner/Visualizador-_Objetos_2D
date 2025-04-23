@@ -11,21 +11,23 @@
 		<wmin x="0.0" y="0.0" />
 		<wmax x="10.0" y="7.5" />
 	</window>
-	<ponto x="0.5" y="2" />
-	<ponto x="2" y="4" />
-	<ponto x="4" y="6" />
-	<reta>
+
+	<ponto x="0.5" y="2" cor="indianred1"/>
+	<ponto x="2" y="4" cor="darkorange1"/>
+	<ponto x="4" y="6" cor="deepskyblue2"/>
+
+	<reta cor="goldenrod1">
 		<ponto x="2" y="2" />
 		<ponto x="4" y="4" />
 	</reta>
-	<reta>
+
+	<reta cor="chartreuse2">
 		<ponto x="4" y="4" />
 		<ponto x="2" y="6" />
 	</reta>
 
-	<reta>
+	<reta cor="violetred1">
 		<ponto x="-20" y="-10" />
 		<ponto x="20" y="15" />
 	</reta>
-
 </dados>

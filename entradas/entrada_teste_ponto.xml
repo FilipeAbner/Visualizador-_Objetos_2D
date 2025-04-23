@@ -7,28 +7,28 @@
 		<vpmax x="800" y="600" />
 	</viewport>
 	<window>
-		<!-- procure manter a mesma razão de aspecto da viewport para evitar distorções -->
+		<!-- mesma razão de aspecto da viewport para evitar distorções -->
 		<wmin x="0.0" y="0.0" />
 		<wmax x="10.0" y="7.5" />
 	</window>
 
-		<ponto x="0.5" y="2" />
-		<ponto x="2" y="4" />
-		<ponto x="4" y="6" />
+		<ponto x="0.5" y="2" cor="maroon1"/>
+		<ponto x="2" y="4" cor="orchid1"/>
+		<ponto x="4" y="6" cor="gold2"/>
 
-		<ponto x="2" y="2" />
-		<ponto x="4" y="4" />
+		<ponto x="2" y="2" cor="yellow2"/>
+		<ponto x="4" y="4" cor="tomato2"/>
 
-		<ponto x="2" y="6" />
+		<ponto x="2" y="6" cor="forestgreen"/>
 
-		<ponto x="1.0" y="1.0" />
-		<ponto x="1.0" y="2.0" />
-		<ponto x="2.0" y="2.0" />
-		<ponto x="2.0" y="1.0" />
+		<ponto x="1.0" y="1.0" cor="blue"/>
+		<ponto x="1.0" y="2.0" cor="green"/>
+		<ponto x="2.0" y="2.0" cor="red"/>
+		<ponto x="2.0" y="1.0" cor="purple"/>
 		<!-- <ponto> adicionais -->
-		<ponto x="6.0" y="5.0" />
-		<ponto x="16.0" y="5.0" />
-		<ponto x="11.0" y="14.0" />
+		<ponto x="6.0" y="5.0" cor="cyan"/>
+		<ponto x="16.0" y="5.0" cor="magenta"/>
+		<ponto x="11.0" y="14.0" cor="lime"/>
 		<!-- <ponto> adicionais -->
 
 </dados>
