@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- comentários... -->
+<dados>
+	<viewport>
+		<!-- viewport para uma janela de visualização de 800x600 razão de aspecto de 4:3 -->
+		<vpmin x="0" y="0" />
+		<vpmax x="800" y="600" />
+	</viewport>
+	<window>
+		<!-- procure manter a mesma razão de aspecto da viewport para evitar distorções -->
+		<wmin x="0.0" y="0.0" />
+		<wmax x="10.0" y="7.5" />
+	</window>
+
+	<poligono>
+		<ponto x="6.0" y="5.0" />
+		<ponto x="11.0" y="14.0" />
+		<ponto x="16.0" y="5.0" />
+		<!-- <ponto> adicionais -->
+	</poligono>
+
+</dados>
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- comentários... -->
+<dados>
+	<viewport>
+		<!-- viewport para uma janela de visualização de 800x600 razão de aspecto de 4:3 -->
+		<vpmin x="0" y="0" />
+		<vpmax x="800" y="600" />
+	</viewport>
+	<window>
+		<!-- procure manter a mesma razão de aspecto da viewport para evitar distorções -->
+		<wmin x="0.0" y="0.0" />
+		<wmax x="10.0" y="7.5" />
+	</window>
+	<ponto x="0.5" y="2" cor="maroon1"/>
+	<ponto x="2" y="4" cor="orchid1"/>
+	<ponto x="4" y="6" cor="gold2" />
+	<reta cor="yellow2">
+		<ponto x="2" y="2" />
+		<ponto x="4" y="4" />
+	</reta>
+	<reta cor="tomato2">
+		<ponto x="4" y="4" />
+		<ponto x="2" y="6" />
+	</reta>
+	<poligono cor="blue">
+		<ponto x="1.0" y="1.0" />
+		<ponto x="1.0" y="2.0" />
+		<ponto x="2.0" y="2.0" />
+		<ponto x="2.0" y="1.0" />
+		<!-- <ponto> adicionais -->
+	</poligono>
+	<poligono cor="green">
+		<ponto x="6.0" y="5.0" />
+		<ponto x="11.0" y="14.0" />
+		<ponto x="16.0" y="5.0" />
+		<!-- <ponto> adicionais -->
+	</poligono>
+</dados>
