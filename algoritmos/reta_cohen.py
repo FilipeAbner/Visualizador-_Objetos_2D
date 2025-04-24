@@ -1,5 +1,5 @@
 import copy
-from poligonos import Ponto, Reta, Window
+from algoritmos.poligonos import Ponto, Reta, Window
 
 """
 Retorna o código da região de um ponto em relação a window

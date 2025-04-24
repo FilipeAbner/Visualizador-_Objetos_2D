@@ -1,6 +1,6 @@
 import copy
-from poligonos import Ponto, Reta, Window, Orientacao
 import math
+from algoritmos.poligonos import Ponto, Reta, Window, Orientacao
 
 """
 Função que realiza o clipping de uma reta utilizando o algoritmo de Liang-Barsky
