@@ -1,3 +1,5 @@
+[Read this page in English](README.md)
+
 # 🧭 Visualizador Interativo de Objetos 2D com Transformações, Clipping e Viewport
 
 Este projeto é uma ferramenta gráfica interativa desenvolvida em Python, que permite visualizar, transformar e recortar objetos geométricos 2D em um sistema de coordenadas baseado em window e viewport. O sistema simula etapas importantes de um pipeline gráfico 2D, como transformação de coordenadas, recorte (clipping) e visualização.
