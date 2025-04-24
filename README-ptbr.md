@@ -211,20 +211,19 @@ processo é iterativo e segue os seguintes passos:
 **6. Percorrer até o Ponto de Entrada: A partir desse ponto de saída, o algoritmo percorre a lista da janela até encontrar o próximo ponto de entrada. <br>**
 **7. Retornar à Lista do Polígono: Ao identificar o ponto de entrada na janela, oalgoritmo volta para a lista do polígono, conectando os pontos e continuando o processo. <br>**
 
-Esse ciclo se repete até que todos os pontos de entrada do polígono tenham sido utilizados
+- Esse ciclo se repete até que todos os pontos de entrada do polígono tenham sido utilizados
 
----
-### 📝 Observações
+## 📝 Observações
 
 - O sistema é modular, com foco em flexibilidade e fácil manutenção.
 - Arquivos XML de entrada e saída seguem o mesmo padrão, com adição de dados transformados.
 
-### Contribuindo
+## Contribuindo
 
 ```Contribuições são bem-vindas! ```
 - Para mudanças maiores, abra uma issue primeiro para discutir o que você gostaria de mudar.
 
-### Developers
+## Developers
 
 |   | Name             | Github                         | 
 | -------------------------------------------------------------------------------------------- | ---------------- | ------------------------------ |
