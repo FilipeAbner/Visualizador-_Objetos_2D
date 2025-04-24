@@ -68,8 +68,41 @@ A interface gráfica é composta por:
 ```pip install ipykernel```
 
 ## Utilizando
-- Execute o arquivo ```interface.ipynb```
+1. Execute o arquivo ```interface.ipynb``` e voce irá se deparar com a seguinte interface:
 
+<p align="center">
+  <img src="images/image.png" alt="" />
+</p>
+
+2. Clique em ``` Arquivo -> Abrir``` 
+
+<p align="center">
+  <img src="images/image2.png" alt="" />
+</p>
+
+3. Escolha um dos arquivos de entrada disponiveis em [`entradas`](entradas), ou crie um arquivo e coloque-o nesse diretório.
+
+<p align="center">
+  <img src="images/image3.png" alt="" />
+</p>
+
+4. Escolha um dos algoritmos de clipping de retas(1 ou 2).
+
+<p align="center">
+  <img src="images/image4.png" alt="" />
+</p>
+
+5. Confirme a escolha.
+
+<p align="center">
+  <img src="images/image5.png" alt="" />
+</p>
+
+6. Pronto, agora voce já pode movimentar e visualizar todas as figuras geométricas livremente.
+
+<p align="center">
+  <img src="images/image6.png" alt="" />
+</p>
 
 ## Relatório
 
