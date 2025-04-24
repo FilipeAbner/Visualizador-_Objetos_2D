@@ -67,7 +67,7 @@ A interface gráfica é composta por:
 ```pip install numpy ```<br> 
 ```pip install ipykernel```
 
-## Utilizando
+## Como Utilizar
 1. Execute o arquivo ```interface.ipynb``` e voce irá se deparar com a seguinte interface:
 
 <p align="center">
@@ -110,10 +110,8 @@ A interface gráfica é composta por:
 
 - O primeiro conceito relevante a ser abordado é a **viewport**, que é o espaço na tela do dispositivo onde as figuras serão desenhadas pelo programa. Associado a ela, existe também a **window**, que é o recorte do mundo que será desenhado na viewport. Apesar de ambas poderem ter tamanhos e proporções diferentes, é importante manter a proporção entre elas para evitar distorções na renderização.
 
-- Para trazer as imagens da window para a viewport, não é recomendado que a
-conversão das coordenadas seja feita de 1
-para 1, pois a viewport pode ter diversos tamanhos, considerando que por exemplo,
-dispositivos com tamanhos de tela diferentes sejam utilizados. Por isso é necessária a **transformada de viewport** que é um cálculo aplicado a todos os pontos para convertê-los das coordenadas da window para as coordenadas da viewport, ajustando automaticamente para dispositivos com diferentes tamanhos de tela.
+- Para trazer as imagens da window para a viewport, não é recomendado que a conversão das coordenadas seja feita de 1
+para 1, pois a viewport pode ter diversos tamanhos, considerando que por exemplo, dispositivos com tamanhos de tela diferentes sejam utilizados. Por isso é necessária a **transformada de viewport** que é um cálculo aplicado a todos os pontos para convertê-los das coordenadas da window para as coordenadas da viewport, ajustando automaticamente para dispositivos com diferentes tamanhos de tela.
 
 A **window** pode sofrer três tipos principais de transformações:
 
@@ -123,9 +121,7 @@ A **window** pode sofrer três tipos principais de transformações:
 
 - Além disso, os pontos são normalizados para um **plano de coordenadas normalizado** (entre -1 e 1), o que facilita as transformações e a aplicação de algoritmos como o clipping, além de manter as coordenadas da window ao centro do mundo e fazendo o mesmo com as figuras para que a proporção seja mantida.
 
-- A cada movimentacção feita à window,todos os cálculos desejados relacionados à renderização são aplicadas a todos os pontos do mundo, mesmo
-que esses pontos não estejam dentro da window, o que gera uma grande quantidade de
-cálculos desnecessários realizados pela GPU, para evitar isso, foram criados os algoritmos
+- A cada movimentacção feita à window,todos os cálculos desejados relacionados à renderização são aplicadas a todos os pontos do mundo, mesmo que esses pontos não estejam dentro da window, o que gera uma grande quantidade de cálculos desnecessários realizados pela GPU, para evitar isso, foram criados os algoritmos
 de clipping. O **clipping** é aplicado para evitar que pontos fora da window passem pela transformada de viewport, otimizando o desempenho ao eliminar cálculos desnecessários.
 
 ### 🛠️ Implementação
@@ -144,10 +140,7 @@ A implementação foi realizada em Jupyter Notebooks. A maior parte do código e
 3. A transformada de viewport é usada para converter as coordenadas.
 4. As figuras são renderizadas no `tkinter`.
 
-- Um detalhe da implementação é que a matriz de transformação para o plano de
-coordenadas normalizado é aplicado aos pontos da window apenas uma única vez durante
-uma execução. Após isso ela é aplicada apenas aos pontos do mundo para que eles sejam
-colocados de forma correta junto à window.
+- An implementation detail is that the transformation matrix for the normalized coordinate plane is applied to the window points only once during an execution. After that, it is applied only to the world points so that they are correctly placed next to the window.
 
 ### ✂️ Clipping
 
@@ -166,42 +159,24 @@ O notebook principal (`interface.ipynb`) utiliza os arquivos auxiliares:
   2. Totalmente invisível (AND dos códigos ≠ `0000`)
   3. Parcialmente visível (AND = `0000`, mas algum código ≠ `0000`)
 
-Se a linha precisar de recorte, buscamos o ponto de interseção da linha com a borda
-da janela correspondente, substituímos o ponto fora da janela pelo ponto de interseção e
-então repetimos o processo até que a linha esteja completamente dentro ou fora da janela.
-Após o recorte, a linha resultante (se visível) será desenhada.
+Se a linha precisar de recorte, buscamos o ponto de interseção da linha com a borda da janela correspondente, substituímos o ponto fora da janela pelo ponto de interseção e então repetimos o processo até que a linha esteja completamente dentro ou fora da janela. Após o recorte, a linha resultante (se visível) será desenhada.
 
 > Realiza interseções iterativamente até determinar visibilidade da reta.
 
 #### 🔹 Liang-Barsky
-- O algoritmo de Liang-Barsky utiliza **equações paramétricas** para detectar interseções, sendo uma técnica eficiente para detectar colisões ou
-realizar recortes de segmentos de reta em relação a uma região retangular (janela de
-recorte). Ele é uma melhoria sobre o algoritmo de Cohen-Sutherland, pois evita a
-necessidade de calcular interseções para todas as arestas da janela, utilizando diretamente
-as equações paramétricas da linha.
-- Dessa forma, o algoritmo detecta as intersecções e então retorna a reta com os
-pontos dentro da window, se assim houver.
+- O algoritmo de Liang-Barsky utiliza **equações paramétricas** para detectar interseções, sendo uma técnica eficiente para detectar colisões ou realizar recortes de segmentos de reta em relação a uma região retangular (janela de recorte). Ele é uma melhoria sobre o algoritmo de Cohen-Sutherland, pois evita a necessidade de calcular interseções para todas as arestas da janela, utilizando diretamente as equações paramétricas da linha.
+
+- Dessa forma, o algoritmo detecta as intersecções e então retorna a reta com os pontos dentro da window, se assim houver.
 
 #### 🔹 Weiler-Atherton
 
-- O algoritmo começa identificando todos os pontos de interseção entre as arestas do
-polígono e as arestas da janela (window). Durante este processo:
-  - Cada ponto de interseção é marcado com uma orientação, indicando se é um ponto
-de entrada (quando a aresta do polígono entra na janela) ou um ponto de saída
-(quando a aresta do polígono sai da janela).
+- O algoritmo começa identificando todos os pontos de interseção entre as arestas do polígono e as arestas da janela (window). Durante este processo:
+  - Cada ponto de interseção é marcado com uma orientação, indicando se é um ponto de entrada (quando a aresta do polígono entra na janela) ou um ponto de saída (quando a aresta do polígono sai da janela).
 - Após determinar os pontos de interseção, o algoritmo constrói duas listas circulares que
 organizam esses pontos:
-  - Lista do Polígono: Contém todos os vértices originais do polígono,
-complementados pelos pontos de interseção identificados. Esses pontos são
-inseridos na ordem em que aparecem ao longo do polígono, preservando o sentido
-horário.
-  - Lista da Janela (Window): Contém os vértices da janela de recorte, também
-complementados pelos pontos de interseção, ordenados no sentido horário.
-Ambas as listas preservam a topologia original das formas, incluindo os pontos de
-interseção.
--Com as listas circulares prontas, o algoritmo inicia o processo de construção do
-polígono resultante, representando a porção do polígono que está contida na janela. O
-processo é iterativo e segue os seguintes passos:
+  - Lista do Polígono: Contém todos os vértices originais do polígono, complementados pelos pontos de interseção identificados. Esses pontos são inseridos na ordem em que aparecem ao longo do polígono, preservando o sentido horário.
+  - Lista da Janela (Window): Contém os vértices da janela de recorte, também complementados pelos pontos de interseção, ordenados no sentido horário. Ambas as listas preservam a topologia original das formas, incluindo os pontos de interseção.
+-Com as listas circulares prontas, o algoritmo inicia o processo de construção do polígono resultante, representando a porção do polígono que está contida na janela. O processo é iterativo e segue os seguintes passos:
 
   **1. Busca por Pontos de Entrada: O algoritmo começa na lista do polígono, procurando o próximo ponto de entrada. <br>**
 **2. Ao processar o ponto de entrada sua orientação é marcada como utilizada. <br>**
