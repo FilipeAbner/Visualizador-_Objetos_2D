@@ -310,8 +310,8 @@ Parâmetros:
 Retorna:
     list: Lista com as 2 listas de recorte, respectivamente, do polígono e da window
 """
-def calcula_listas_recorte(window : Window, poligono : Poligono) -> list:
-    from reta_liang import LiangBarskyClipping
+def calcula_listas_recorte(window : Window, poligono : Poligono) -> list: 
+    from algoritmos.reta_liang import LiangBarskyClipping
     pontosIntersecaoPoligono = []
 
     #lista que se tornara a lista circular dos pontos do poligono
